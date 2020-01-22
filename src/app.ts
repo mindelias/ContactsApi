@@ -8,7 +8,7 @@ import contactRouter from "./routes/contact";
 import mongoose from 'mongoose'
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/Contacts', { useUnifiedTopology: true, useNewUrlParser: true }).then(() => console.log('connect sucessfully') ).catch(err => console.log(err))
+mongoose.connect('mongodb://localhost:27017/ContactsDB', { useUnifiedTopology: true, useNewUrlParser: true }).then(() => console.log('connect sucessfully') ).catch(err => console.log(err))
 
 // view engine setup
 app.set('views', path.join(__dirname, '../', 'views'));

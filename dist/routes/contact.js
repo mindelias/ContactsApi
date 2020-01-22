@@ -10,13 +10,9 @@ const Joi = require("@hapi/joi");
 const model_1 = __importDefault(require("../UserModel/model"));
 const router = express_1.Router();
 router.get("/contacts", (_req, res) => {
-    const data = contact_1.getContacts();
-    console.log(data);
-    if (data.length === 0) {
-        res.status(204).json({ data });
-        return;
-    }
-    res.status(200).json({ data });
+    // const data = getContacts();
+    model_1.default.find().then(result => res.status(200).json(result)).catch(err => console.log(err));
+    // console.log(data)
 });
 router.get("/contact/:contactID", (req, res) => {
     const { error, value: contactID } = Joi.string()
@@ -37,7 +33,7 @@ router.get("/contact/:contactID", (req, res) => {
 router.post("/contacts", (req, res) => {
     const contact = req.body;
     const newContact = new model_1.default(contact);
-    newContact.save();
+    newContact.save().then(() => console.log('saved data')).catch(err => console.log(err));
     try {
         const data = contact_1.createContact(contact);
         // User.create(() => )

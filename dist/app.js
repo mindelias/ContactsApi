@@ -11,7 +11,7 @@ const morgan_1 = __importDefault(require("morgan"));
 const contact_1 = __importDefault(require("./routes/contact"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const app = express_1.default();
-mongoose_1.default.connect('mongodb://localhost:27017/Contacts', { useUnifiedTopology: true, useNewUrlParser: true }).then(() => console.log('connect sucessfully')).catch(err => console.log(err));
+mongoose_1.default.connect('mongodb://localhost:27017/ContactsDB', { useUnifiedTopology: true, useNewUrlParser: true }).then(() => console.log('connect sucessfully')).catch(err => console.log(err));
 // view engine setup
 app.set('views', path_1.default.join(__dirname, '../', 'views'));
 app.set('view engine', 'ejs');

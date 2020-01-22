@@ -1,6 +1,6 @@
 import { Router } from "express";
 import {
-  getContacts,
+  // getContacts,
   getContactByID,
   createContact,
   updateContact
@@ -12,16 +12,9 @@ import User from '../UserModel/model'
 const router = Router();
 
 router.get("/contacts", (_req, res) => {
-  const data = getContacts();
-  console.log(data)
-
-  if (data.length === 0) {
-    res.status(204).json({ data });
-
-    return;
-  }
-
-  res.status(200).json({ data });
+  // const data = getContacts();
+  User.find().then(result => res.status(200).json(result)).catch(err => console.log(err))
+  // console.log(data)
 });
 
 router.get("/contact/:contactID", (req, res) => {
@@ -49,7 +42,7 @@ router.get("/contact/:contactID", (req, res) => {
 router.post("/contacts", (req, res) => {
   const contact = req.body;
   const newContact = new User(contact)
-  newContact.save()
+  newContact.save().then(() => console.log('saved data')).catch(err => console.log(err))
   
 
   try {

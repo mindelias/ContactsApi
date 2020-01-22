@@ -11,11 +11,9 @@ const UserSchema = new mongoose_1.default.Schema({
     },
     lastName: {
         type: String,
-        required: true
     },
     email: {
         type: String,
-        required: true
     },
     phone: {
         type: String,
@@ -23,7 +21,6 @@ const UserSchema = new mongoose_1.default.Schema({
     },
     company: {
         type: String,
-        required: true
     },
     createdAt: {
         type: Date,

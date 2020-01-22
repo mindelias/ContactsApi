@@ -7,12 +7,12 @@ const UserSchema = new mongoose.Schema({
     },
     lastName: {
         type: String,
-        required: true
+        // required: true
     }, 
 
    email: {
         type: String,
-        required: true
+        // required: true
     },
     phone: {
         type: String,
@@ -20,7 +20,7 @@ const UserSchema = new mongoose.Schema({
     },
     company: {
         type: String,
-        required: true
+        // required: true
     },
    createdAt: {
         type:Date,

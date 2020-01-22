@@ -13,9 +13,11 @@ describe('Contact Spec', () => {
    const response = await request(app).get('/api/contact/non-existent');
    expect(response.status).toBe(400);
  });
-  test("Quering a contact", async () => {
-    const response = await request(app).get("/api/contact/non-existent");
-    expect(response.status).toBe(400);
-  });
+  
+  
+  // test("Quering a contact", async () => {
+  //   const response = await request(app).get("/api/contact/non-existent");
+  //   expect(response.status).toBe(400);
+  // });
 
 });
